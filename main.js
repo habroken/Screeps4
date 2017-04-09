@@ -14,4 +14,13 @@ module.exports.loop = function () {
             roleUpgrader.run(creep);
         }
     }
-}
+
+    var name = Game.spawns.Spawn1.createCreep([WORK,WORK,CARRY,MOVE], undefined,
+        { role: 'harvester', working: false});
+
+    if (name != undefined)  {
+        console.log("Spawned new creep: " + name);
+    }
+
+
+};
