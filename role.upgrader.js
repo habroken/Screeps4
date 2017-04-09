@@ -15,10 +15,10 @@ module.exports = {
         // if creep is supposed to transfer energy to the spawn
         if (creep.memory.working == true) {
             // try to transfer energy, if the spawn is not in range
-            if (creep.upgrade)
+            if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
             // if (creep.transfer(Game.spawns.Spawn1, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
             // move towards the spawn
-                creep.moveTo(Game.spawns.Spawn1);
+                creep.moveTo(creep.room.controller);
         }
     }
     // if creep is supposed to harvest energy from source
